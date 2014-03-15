@@ -1,0 +1,33 @@
+package deliv3.jforumtest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+/**
+ * This class handles initialization of the Selenium driver used for step defs provides an accesor for xPath locator handles
+ * 
+ * @author adnankhan
+ *
+ */
+public class SeleniumSteps {
+	
+	/**
+	 * WebDriver in which our steps will be executed
+	 */
+	protected WebDriver testDriver;
+
+	protected void setUp() {
+		testDriver = new FirefoxDriver();
+		testDriver.get(Locators.WEB_HOME.getName());
+	}
+
+	protected void tearDown() {
+		this.testDriver.close();
+	}
+
+	protected WebElement find(Locators handle) {
+		return this.testDriver.findElement(By.xpath(handle.getName()));
+	}
+}

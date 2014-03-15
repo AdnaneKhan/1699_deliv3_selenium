@@ -5,6 +5,13 @@ import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This enum holds all of the locators for our jforum test in their xPath formats.
+ * 
+ * These xPaths were acquired using the Inspect Element -> Copy xPath feature in Google Chrome
+ * @author adnankhan
+ *
+ */
 public enum Locators {
 	LOG_IN (1,"//*[@id=\"login\"]"),
 	U_NAME (2,"//*[@id=\"loginform\"]/table[2]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/input"),

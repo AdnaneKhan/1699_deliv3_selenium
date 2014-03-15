@@ -1,43 +1,44 @@
 package deliv3.jforumtest;
 
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.*;
 
 import cucumber.annotation.en.Given;
 import cucumber.annotation.en.Then;
 import cucumber.annotation.en.When;
 import static org.junit.Assert.*;
 
-
 /**
- * Step Definition File
+ * Step Definition File for 
  * 
+ * 
+ * Given I am a registered user
+ *	and my username is TestUser
+ *	and my password is test_pw
+ *	When I try to log in
+ *	and I enter TestUser
+ *	and I enter test_pw
+ *	Then I am given access to the site
+ * 			Scenario: 
  * @author adnankhan
  *
  */
-public class UserPostStepDefinitions
+public class RegUserLoginStepDefinitions extends SeleniumSteps
 {
-	
-	private WebDriver testDriver;
-	
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
-    private String userName;
-    private String userPass;
-    
+	private String userName = null;
+	private String userPass = null;
     
     public void setUp() {
-    	testDriver = new FirefoxDriver();
-    	testDriver.get(Locators.WEB_HOME.getName());
+    	super.setUp();
     }
+    
+    public void tearDown() {
+    	super.tearDown();
+    }	
+    
+    
     
     @Given ("my username is (.*)$")
     public void logUserIn(String uName) {
@@ -49,7 +50,7 @@ public class UserPostStepDefinitions
     	userPass = pWord;
     }
     
-    @When ("i try to log in")
+    @When ("I try to log in")
     public void login() {
     	WebElement login = find(Locators.LOG_IN);
     	login.click();
@@ -70,7 +71,6 @@ public class UserPostStepDefinitions
     	String regex = "\\[(.*?)\\]";
     	Pattern p = Pattern.compile(regex);
     	
-    	
     	WebElement loggedIn = find(Locators.LOGGED_IN);
     	String field = loggedIn.getText();
     	
@@ -78,13 +78,4 @@ public class UserPostStepDefinitions
     	
     	assertEquals(m.group(1), this.userName);
     }
-    
-    public void tearDown() {
-    	this.testDriver.close();
-    }
-    
-    private WebElement find(Locators handle) {
-    	return this.testDriver.findElement(By.xpath(handle.getName()));
-    }
-    		
 }
