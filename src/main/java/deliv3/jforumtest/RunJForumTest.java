@@ -9,12 +9,8 @@ import cucumber.api.junit.Cucumber;
 
 import org.junit.runner.RunWith;
 
-public class PostStepDefinitions extends SeleniumSteps {
-	public void setUp() {
-		super.setUp();
-	}
-	
-	public void tearDown() {
-		super.tearDown();
-	}
+@RunWith(Cucumber.class)
+@Cucumber.Options(format = {"html:target/cucumber-html-report", "json:target/cucumber-json-report.json"})
+public class RunJForumTest {
+
 }

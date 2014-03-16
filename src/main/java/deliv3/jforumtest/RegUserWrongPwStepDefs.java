@@ -1,5 +1,9 @@
 package deliv3.jforumtest;
 
+import cucumber.api.junit.*;
+import org.junit.runner.RunWith;
+
+
 public class RegUserWrongPwStepDefs extends SeleniumSteps {
 //	Given I am a registered user
 //	and my username is TestUser

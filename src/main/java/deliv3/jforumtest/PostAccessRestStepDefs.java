@@ -4,17 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import cucumber.annotation.cs.A;
-import cucumber.annotation.en.Given;
-import cucumber.annotation.en.Then;
-import cucumber.annotation.en.When;
+import cucumber.api.java.en.*;
+import cucumber.api.junit.Cucumber;
 
+import org.junit.runner.RunWith;
 
 //Given that I am an admin
 //when I make a post restricted to admins only
 //and a non-administrator views the forum
 //then the user is unable to see the restricted thread
 
+@RunWith(Cucumber.class)
 public class PostAccessRestStepDefs extends SeleniumSteps {
 	// We utilize a separate instance of webdriver to serve as the admin's browsers
 	private WebDriver adminDriver = new FirefoxDriver();

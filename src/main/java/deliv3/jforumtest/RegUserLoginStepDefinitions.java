@@ -2,12 +2,14 @@ package deliv3.jforumtest;
 
 import org.openqa.selenium.WebElement;
 
-import cucumber.annotation.en.Given;
-import cucumber.annotation.en.Then;
-import cucumber.annotation.en.When;
+import cucumber.api.java.en.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static org.junit.Assert.*;
+
+import cucumber.api.junit.*;
+import org.junit.runner.RunWith;
+
 /**
  * Step Definition File for 
  * 
