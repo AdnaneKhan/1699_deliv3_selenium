@@ -26,8 +26,12 @@ public enum Locators {
 	WEB_HOME (5,"http://localhost:8080/jforum"),
 	// 
 	LOGGED_IN (6,"//*[@id=\"logout\"]"),
-	AGREE_BUTTON(7,"/html/body/table/tbody/tr[2]/td/table/tbody/tr[3]/td/input[1]"),
-	DISAGREE_BUTTON(8,"/html/body/table/tbody/tr[2]/td/table/tbody/tr[3]/td/input[2]");
+	MY_PROFILE(7,"http://localhost:8080/jforum/user/edit/2.page"),
+	CUR_PASSWORD(8,"//*[@id=\"current_password\"]"),
+	NEW_PASS(9,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[7]/td[2]/input"),
+	CONFIRM_PASS(10,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[8]/td[2]/input"),
+	TWITTER_INPUT(11,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[12]/td[2]/input"),
+	TWITTER_ANCHOR(12,"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[3]/tbody/tr[4]/td/table/tbody/tr/td/a[3]");
 	
 	private int id;
 	private String name;
