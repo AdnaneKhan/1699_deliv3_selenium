@@ -1,5 +1,5 @@
 
-package deliv3.jforumtest;
+package deliv3.testing;
 
 import cucumber.api.junit.*;
 import cucumber.api.junit.Cucumber;
@@ -24,7 +24,10 @@ public enum Locators {
 	SUBMIT (4,"//*[@id=\"loginform\"]/table[2]/tbody/tr[2]/td/table/tbody/tr[5]/td/input[2]"),
 	// This is where we have locally installed Selenium
 	WEB_HOME (5,"http://localhost:8080/jforum"),
+	// 
 	LOGGED_IN (6,"//*[@id=\"logout\"]");
+	
+	
 	private int id;
 	private String name;
 	

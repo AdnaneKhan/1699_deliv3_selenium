@@ -1,4 +1,4 @@
-package deliv3.jforumtest;
+package deliv3.testing;
 
 import org.openqa.selenium.WebElement;
 

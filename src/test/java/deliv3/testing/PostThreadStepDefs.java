@@ -1,4 +1,4 @@
-package deliv3.jforumtest;
+package deliv3.testing;
 
 import cucumber.api.junit.*;
 import cucumber.api.junit.Cucumber;
