@@ -34,10 +34,11 @@ public class PostAccessRestStepDefs extends SeleniumSteps {
 	@Given ("that I am an admin.")
 	public void adminLogin() {
 		//Locate and click login page
-		adminDriver.findElement(By.xpath(Locators.LOGGED_IN.getName())).click();
-		adminDriver.findElement(By.xpath(Locators.U_NAME.getName())).sendKeys(this.ADMIN_NAME);
-		adminDriver.findElement(By.xpath(Locators.P_WORD.getName())).sendKeys(this.ADMIN_PW);
-		adminDriver.findElement(By.xpath(Locators.SUBMIT.getName())).click();
+
+		super.find(Locators.LOGGED_IN,adminDriver).click();
+		super.find(Locators.U_NAME,adminDriver).sendKeys(this.ADMIN_NAME);
+		super.find(Locators.P_WORD,adminDriver).sendKeys(this.ADMIN_PW);	
+		super.find(Locators.SUBMIT,adminDriver).click();
 		
 		// Verify that we are logged in and that we are admin
 		

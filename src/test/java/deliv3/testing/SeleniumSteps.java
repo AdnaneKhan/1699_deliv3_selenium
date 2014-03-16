@@ -1,5 +1,6 @@
 package deliv3.testing;
 
+import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -15,6 +16,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import cucumber.api.java.en.*;
+import cucumber.api.junit.Cucumber;
 import static org.junit.Assert.*;
 
 /**
@@ -23,6 +25,8 @@ import static org.junit.Assert.*;
  * @author adnankhan
  *
  */
+
+@RunWith(Cucumber.class)
 public class SeleniumSteps {
 	
 	/**
@@ -42,6 +46,11 @@ public class SeleniumSteps {
 	protected WebElement find(Locators handle) {
 		return this.testDriver.findElement(By.xpath(handle.getName()));
 	}
+	
+	protected WebElement find(Locators handle, WebDriver specific) {
+		return specific.findElement(By.xpath(handle.getName()));
+	}
+	
 	
 	protected void takeScreen(WebDriver screentaker, String savePath) throws IOException {
 		File screen = ((TakesScreenshot)screentaker).getScreenshotAs(OutputType.FILE);
