@@ -34,12 +34,12 @@ public class SeleniumSteps {
 	protected WebDriver testDriver;
 
 	protected SeleniumSteps() {
-		testDriver = BrowserDriver.getCurrentDriver();
+		testDriver = new FirefoxDriver();
 		testDriver.get(Locators.WEB_HOME.toString());
 	}
 
 	protected void tearDown() {
-		BrowserDriver.close();
+		this.testDriver.close();
 	}
 
 	protected WebElement find(Locators handle) {
