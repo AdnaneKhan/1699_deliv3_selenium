@@ -1,15 +1,13 @@
 package deliv3.jforumtest;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import org.openqa.selenium.WebElement;
 
 import cucumber.annotation.en.Given;
 import cucumber.annotation.en.Then;
 import cucumber.annotation.en.When;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import static org.junit.Assert.*;
-
 /**
  * Step Definition File for 
  * 
@@ -37,8 +35,6 @@ public class RegUserLoginStepDefinitions extends SeleniumSteps
     public void tearDown() {
     	super.tearDown();
     }	
-    
-    
     
     @Given ("my username is (.*)$")
     public void logUserIn(String uName) {
