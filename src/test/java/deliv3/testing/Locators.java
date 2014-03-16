@@ -25,8 +25,9 @@ public enum Locators {
 	// This is where we have locally installed Selenium
 	WEB_HOME (5,"http://localhost:8080/jforum"),
 	// 
-	LOGGED_IN (6,"//*[@id=\"logout\"]");
-	
+	LOGGED_IN (6,"//*[@id=\"logout\"]"),
+	AGREE_BUTTON(7,"/html/body/table/tbody/tr[2]/td/table/tbody/tr[3]/td/input[1]"),
+	DISAGREE_BUTTON(8,"/html/body/table/tbody/tr[2]/td/table/tbody/tr[3]/td/input[2]");
 	
 	private int id;
 	private String name;
