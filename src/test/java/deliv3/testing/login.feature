@@ -5,9 +5,7 @@ Given I am a registered user
 And my username is "TestUser"
 And my password is "test_pw"
 When I try to log in
-And I enter TestUser
-And I enter test_pw
-Then I am given access to the site
+Then I am given access to the forum
 
 Scenario: Registered User Wrong Pw
 Given I am a registered user

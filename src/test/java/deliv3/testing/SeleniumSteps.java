@@ -26,7 +26,6 @@ import static org.junit.Assert.*;
  *
  */
 
-@RunWith(Cucumber.class)
 public class SeleniumSteps {
 	
 	/**
@@ -34,7 +33,7 @@ public class SeleniumSteps {
 	 */
 	protected WebDriver testDriver;
 
-	protected void setUp() {
+	protected SeleniumSteps() {
 		testDriver = new FirefoxDriver();
 		testDriver.get(Locators.WEB_HOME.getName());
 	}

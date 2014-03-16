@@ -2,6 +2,7 @@ package deliv3.testing;
 
 import org.openqa.selenium.WebElement;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.*;
 
 import java.util.regex.Matcher;
@@ -28,19 +29,22 @@ import org.junit.runner.RunWith;
  *
  */
 
-@RunWith(Cucumber.class)
 public class RegUserLoginStepDefinitions extends SeleniumSteps
 {
 	private String userName = null;
 	private String userPass = null;
-    
-    public void setUp() {
-    	super.setUp();
-    }
-    
+	
+	public RegUserLoginStepDefinitions() {
+		super();
+	}
+	
     public void tearDown() {
     	super.tearDown();
-    }	
+    }
+    
+    @Given("^I am a registered user$")
+    public void I_am_a_registered_user() throws Throwable {
+    }
     
     @Given ("my username is (.*)$")
     public void logUserIn(String uName) {
@@ -79,5 +83,7 @@ public class RegUserLoginStepDefinitions extends SeleniumSteps
     	Matcher m = p.matcher(field);
     	
     	assertEquals(m.group(1), this.userName);
+    	
+    	this.tearDown();
     }
 }

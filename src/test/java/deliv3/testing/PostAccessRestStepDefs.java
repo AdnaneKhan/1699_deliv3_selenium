@@ -14,15 +14,14 @@ import org.junit.runner.RunWith;
 //and a non-administrator views the forum
 //then the user is unable to see the restricted thread
 
-@RunWith(Cucumber.class)
 public class PostAccessRestStepDefs extends SeleniumSteps {
 	// We utilize a separate instance of webdriver to serve as the admin's browsers
 	private WebDriver adminDriver = new FirefoxDriver();
 	private static final String ADMIN_PW = "1699_pw";
 	private static final String ADMIN_NAME = "Admin";
 
-	public void setUp() {
-		super.setUp();
+	public PostAccessRestStepDefs() {
+		super();
 		adminDriver.get(Locators.WEB_HOME.getName());
 		
 		// Log the admin in, not part of test, but if it fails we abort

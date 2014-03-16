@@ -13,10 +13,9 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 import static org.junit.Assert.*;
 
-@RunWith(Cucumber.class)
 public class TwitterHandleStepdefs extends SeleniumSteps {
-	public void setUp() {
-		super.setUp();
+	public TwitterHandleStepdefs() {
+		super();
 	}
 
 	public void tearDown() {
@@ -29,22 +28,22 @@ public class TwitterHandleStepdefs extends SeleniumSteps {
 
 	//
 	// Scenario: User Twitter Handle
-	@Given("that I am a user with the user name (.$)")
+	@Given("^that I am a user with the user name (.$)")
 	public void setUName(String userName) {
 		this.uName = userName;
 	}
 
-	@And("my password is (.$)")
+	@And("^my password is (.$)")
 	public void setPW(String passWord) {
 		this.pWord = passWord;
 	}
 
-	@And("I log log in")
+	@And("^I log log in")
 	public void logIn() {
 		// login
 	}
 
-	@When("I edit my profile")
+	@When("^I edit my profile")
 	public void editprofile() {
 		// click on the profile edit button
 	}
