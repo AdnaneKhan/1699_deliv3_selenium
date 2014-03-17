@@ -46,12 +46,12 @@ public class RegUserLoginStepDefinitions extends SeleniumSteps
     public void I_am_a_registered_user() throws Throwable {
     }
     
-    @Given ("my username is (.*)$")
+    @Given ("my username is \"(.*?)\"$")
     public void logUserIn(String uName) {
     	userName = uName;
     }
     
-    @Given ("my password is (.*)$")
+    @Given ("my password is \"(.*?)\"$")
     public void enterPass(String pWord) {
     	userPass = pWord;
     }
@@ -72,18 +72,15 @@ public class RegUserLoginStepDefinitions extends SeleniumSteps
     	submit.click();	
     }
     
-    @Then ("I am granted access to the forum")
+    @Then ("I am given access to the forum")
     public void verifyLogin() {
-    	String regex = "\\[(.*?)\\]";
-    	Pattern p = Pattern.compile(regex);
+    	String toMatch = "Logout ["+userName+"]";
     	
-    	WebElement loggedIn = find(Locators.LOGGED_IN);
-    	String field = loggedIn.getText();
-    	
-    	Matcher m = p.matcher(field);
-    	
-    	assertEquals(m.group(1), this.userName);
-    	
-    	this.tearDown();
+        WebElement loggedIn = find(Locators.LOGGED_IN);
+        String field = loggedIn.getText();
+
+        assertEquals(toMatch.equalsIgnoreCase(field), true);
+        	
+        this.tearDown();
     }
 }

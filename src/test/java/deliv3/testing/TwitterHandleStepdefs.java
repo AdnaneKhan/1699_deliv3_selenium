@@ -28,7 +28,7 @@ public class TwitterHandleStepdefs extends SeleniumSteps {
 
 	//
 	// Scenario: User Twitter Handle
-	@Given("^that I am a user with the user name (.$)")
+	@Given("^that I am a user with the user name \"(.*?)\"")
 	public void setUName(String userName) {
 		this.uName = userName;
 	}

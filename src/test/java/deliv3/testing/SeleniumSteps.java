@@ -2,6 +2,7 @@ package deliv3.testing;
 
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -31,23 +32,36 @@ public class SeleniumSteps {
 	/**
 	 * WebDriver in which our steps will be executed
 	 */
-	protected WebDriver testDriver;
-
-	protected SeleniumSteps() {
-		testDriver = new FirefoxDriver();
-		testDriver.get(Locators.WEB_HOME.toString());
-	}
+	protected static WebDriver testDriver = null;
 
 	protected void tearDown() {
 		this.testDriver.close();
+		testDriver = null;
+	}
+	
+	public synchronized static WebDriver getCurrentDriver() {
+		if (testDriver == null) {
+				testDriver = new FirefoxDriver();
+				testDriver.get(Locators.WEB_HOME.getName());
+		}
+		return testDriver;
 	}
 
 	protected WebElement find(Locators handle) {
-		return this.testDriver.findElement(By.xpath(handle.getName()));
+		return this.find(handle, getCurrentDriver());
 	}
 	
 	protected WebElement find(Locators handle, WebDriver specific) {
-		return specific.findElement(By.xpath(handle.getName()));
+		WebElement toFind = null;
+		
+		try {
+			toFind = specific.findElement(By.xpath(handle.getName()));
+		} catch (NoSuchElementException e ) {
+			specific.quit();
+			fail();
+		}
+		
+		return toFind;
 	}
 	
 	

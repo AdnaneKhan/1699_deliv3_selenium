@@ -30,7 +30,7 @@ public class PostAccessRestStepDefs extends SeleniumSteps {
 		// Logged in? good
 	}
 	
-	@Given ("that I am an admin.")
+	@Given ("^that I am an admin")
 	public void adminLogin() {
 		//Locate and click login page
 
@@ -43,7 +43,7 @@ public class PostAccessRestStepDefs extends SeleniumSteps {
 		
 	}
 	
-	@When ("I make a thead named (.?) viewable by admins only")
+	@When ("^I make a thread named \"([^\"]*)\" viewable by admins only")
 	public void restricted() {
 		// Make a post & set it to be restricted
 	}
