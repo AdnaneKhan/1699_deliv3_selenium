@@ -16,11 +16,11 @@ public class AdminUserLoginStepDefs extends SeleniumSteps{
 	
 	@Given("^that I am a forum administrator$")
 	public void that_I_am_a_forum_administrator(){
-//	   WebElement admin_id = super.find(Locators.ADMIN_NAME);
-//	   String admin_user = admin_id.getText();
-//	   
-//	   // If the span designating admin is present and contain admin
-//	   assertEquals(admin_user,"Admin");
+	   WebElement admin_id = super.find(Locators.ADMIN_NAME);
+	   String admin_user = admin_id.getText();
+	   
+	   // If the span designating admin is present and contain admin
+	   assertEquals(admin_user,"Admin");
 	}
 
 	@Then("^I am able to access the control panel$")
