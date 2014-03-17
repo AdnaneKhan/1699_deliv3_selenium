@@ -64,6 +64,7 @@ public class SignatureStepdefs extends SeleniumSteps {
 		}
 		catch(Exception e){
 			super.tearDown();
+			fail();
 		}
 	}
 	
@@ -87,6 +88,7 @@ public class SignatureStepdefs extends SeleniumSteps {
 		}
 		catch(Exception e){
 			super.tearDown();
+			fail();
 		}
 		assertFalse(present(Locators.ADMIN_SIG_BLOCK));
 		
