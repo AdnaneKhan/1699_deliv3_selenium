@@ -48,7 +48,10 @@ public enum Locators {
 	SUBMIT_SETTINGS("//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[38]/td/input[1]"),
 	OLD_PW("//*[@id=\"current_password\"]"),
 	SIG_BLOCK("//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[21]/td[2]/textarea"),
-	ADMIN_NAME("/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[4]/tbody/tr[3]/td/a/span");
+	ADMIN_NAME("/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[4]/tbody/tr[3]/td/a/span"),
+	MEM_LIST("//*[@id=\"userlist\"]"),
+	PROF_UPDATE("//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font"),
+	TWITTER("/html/body/table/tbody/tr[2]/td/table[2]/tbody/tr[4]/td/table/tbody/tr[2]/td[2]/b/span/a");
 
 	private String name;
 	

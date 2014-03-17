@@ -1,9 +1,9 @@
 package deliv3.testing;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import cucumber.api.java.en.*;
-
 import static org.junit.Assert.*;
 
 public class TwitterHandleStepdefs extends SeleniumSteps {
@@ -11,58 +11,48 @@ public class TwitterHandleStepdefs extends SeleniumSteps {
 		super();
 	}
 	
-//	  Scenario: User Twitter Handle
-//	    Given that I am a user
-//	    And my username is "Admin"
-//	    And my password is "1699_pw"
-//	    When I edit my profile
-//	    And I set my Twitter handle as "user1"
-//	    And then save these changes
-//	    Then my twitter handle should appear below posts that I have made
-//	    And I close my browser
-
 	public void closeDown() {
 		super.tearDown();
 	}
 
 	private String twitterHandle;
-
-	@When("^I edit my profile")
-	public void editprofile() {
-		WebElement myProfile = find(Locators.MY_PROFILE);
-		myProfile.click();
+	
+	@And ("I edit my profile")
+	public void I_edit_my_profile() throws InterruptedException{
+		super.getCurrentDriver().findElement(By.linkText("My Profile")).click();
 	}
 
-	@And("I set my twitter handle as \"(.*?)\"$")
-	public void saveChanges(String twitter) {
-		WebElement twitterBox = super.find(Locators.TWITTER_INPUT);
-		twitterBox.sendKeys(twitter);
+	@And("I want to change my Twitter account to \"(.*?)\"")
+	public void change_pw(String twtAccount) throws InterruptedException {
+		this.twitterHandle = twtAccount;
+		
+		WebElement twtBox = super.find(Locators.TWITTER_INPUT);
+		twtBox.clear();
+		twtBox.sendKeys(twtAccount);
 	}
 	
 	@And("I submit my changes")
-	public void submitChanges(){
+	public void submitChanges() throws InterruptedException{
 		WebElement submitButton = super.find(Locators.SAVE_PROFILE);
 		submitButton.click();
 	}
 
 	@Then("my twitter handle should appear below posts that I have made")
-	public void confirmHandle() {
+	public void confirmHandle() throws InterruptedException {
 		// Make sure handle matches the one we entered earlier
-		WebElement homeButton = super.find(Locators.PROFILE_FORUM_INDEX);
-		homeButton.click();
-		
-		WebElement testForum = super.find(Locators.TEST_FORUM);
-		testForum.click();
-		
-		WebElement welcomeForum = super.find(Locators.INTRO_THREAD);
-		welcomeForum.click();
-		
-		WebElement handle = super.find(Locators.TWITTER_ANCHOR);
-		String linkText = super.find(Locators.TWITTER_ANCHOR).getAttribute(
-				"href");
-		String purportedLink = "http://twitter.com/" + this.twitterHandle;
 
-		assertEquals(purportedLink, this.twitterHandle);
+		String purportedLink = "http://twitter.com/" + this.twitterHandle;
+		
+		assertTrue(present(Locators.PROF_UPDATE));
+		
+		WebElement userList = find(Locators.MEM_LIST);
+		userList.click();
+		
+		super.getCurrentDriver().findElement(By.linkText(super.userName)).click();
+		
+		String twitterLink = find(Locators.TWITTER).getAttribute("href");
+		
+		assertEquals(twitterLink.equals(purportedLink),true);
 	}
 
 }
