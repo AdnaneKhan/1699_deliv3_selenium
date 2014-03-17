@@ -52,8 +52,8 @@ public enum Locators {
 	MEM_LIST("//*[@id=\"userlist\"]"),
 	PROF_UPDATE("//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font"),
 	TWITTER("/html/body/table/tbody/tr[2]/td/table[2]/tbody/tr[4]/td/table/tbody/tr[2]/td[2]/b/span/a"),
-	ADMIN_SIG_BLOCK("/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[3]/tbody/tr[4]/td/span");
-
+	ADMIN_SIG_BLOCK("/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[3]/tbody/tr[4]/td/span"),
+	WRONG_PW("//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font");
 	private String name;
 	
 	

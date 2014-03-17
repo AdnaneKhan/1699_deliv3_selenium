@@ -20,8 +20,8 @@ Feature: Login System
     
 
   Scenario: Admin Login
-    Given that I am a forum administrator
-    And my username is "Admin"
+
+    Given my username is "Admin"
     And my password is "1699_pw"
     When I try to log in
     Then my login is accepted

@@ -34,7 +34,6 @@ Scenario: Change Back
     And my login is accepted
     When I want to change my password to "not_test_pw"
     And I am asked to enter my old password I enter "wrong_pw"
-    And I submit my changes
     Then my password change is rejected
     And I close my browser
 
@@ -46,6 +45,5 @@ Scenario: Change Back
     And my login is accepted
     When I want to change my password to "not_test_pw"
     When I am asked to confirm the new password I enter "not_tesst_pw"
-    And I submit my changes
     Then my password change is rejected
     And I close my browser
