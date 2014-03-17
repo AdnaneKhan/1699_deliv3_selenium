@@ -23,6 +23,6 @@ Feature: Login System
     And my username is "Admin"
     And my password is "1699_pw"
     When I try to log in
-   	Then my login is accepted
+    Then my login is accepted
     And I am able to access the control panel
-	And I close my browser
+    And I close my browser

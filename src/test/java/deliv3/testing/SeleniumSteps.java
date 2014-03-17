@@ -29,13 +29,21 @@ import static org.junit.Assert.*;
 
 public class SeleniumSteps {
 	
+	protected static String userName = null;
+	protected static String userPass = null;
+	
+	SeleniumSteps() {
+		getCurrentDriver();
+	}
 	/**
 	 * WebDriver in which our steps will be executed
 	 */
 	protected static WebDriver testDriver = null;
 
-	protected void tearDown() {
-		this.testDriver.close();
+	protected synchronized static void tearDown() {
+		userName = null;
+		userPass = null;
+		testDriver.quit();
 		testDriver = null;
 	}
 	
@@ -57,11 +65,20 @@ public class SeleniumSteps {
 		try {
 			toFind = specific.findElement(By.xpath(handle.getName()));
 		} catch (NoSuchElementException e ) {
-			specific.quit();
+			tearDown();
 			fail("Element Not Located!!!");
 		}
 		
 		return toFind;
+	}
+	
+	protected boolean present(Locators handle) {
+		try {
+			testDriver.findElement(By.xpath(handle.getName()));
+		} catch (NoSuchElementException e ) {
+			return false;
+		}
+		return true;
 	}
 	
 	

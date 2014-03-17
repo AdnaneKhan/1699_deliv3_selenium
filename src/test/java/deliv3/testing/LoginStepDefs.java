@@ -31,14 +31,11 @@ import org.junit.runner.RunWith;
 
 public class LoginStepDefs extends SeleniumSteps
 {
-	private String userName = null;
-	private String userPass = null;
-
 	public LoginStepDefs() {
 		super();
 	}
 	
-    public void tearDown() {
+    public void closeDown() {
     	super.tearDown();
     }
     
@@ -48,39 +45,40 @@ public class LoginStepDefs extends SeleniumSteps
     
     @Given ("my username is \"(.*?)\"$")
     public void logUserIn(String uName) {
-    	userName = uName;
+    	SeleniumSteps.userName = uName;
     }
     
     @Given ("my password is \"(.*?)\"$")
     public void enterPass(String pWord) {
-    	userPass = pWord;
+    	SeleniumSteps.userPass = pWord;
     }
     
     @When ("I try to log in")
-    public void login() {
+    public void login() throws InterruptedException {
+    	
     	WebElement login = find(Locators.LOG_IN);
     	login.click();
-    	
+
     	WebElement uname = find(Locators.U_NAME);
     	WebElement pass = find(Locators.P_WORD);
     	
     	uname.sendKeys(this.userName);
     	pass.sendKeys(this.userPass);
-    	
+
     	WebElement submit = find(Locators.SUBMIT);
-    	
-    	submit.click();	
+
+    	submit.click();
+
     }
     
     @Then ("my login is accepted")
     public void verifyLogin() {
+    	assertTrue(super.present(Locators.LOGGED_IN));
+    	
     	String toMatch = "Logout ["+userName+"]";
     	
         WebElement loggedIn = find(Locators.LOGGED_IN);
         String field = loggedIn.getText();
-        
-//        System.err.println(userName);
-//        System.err.println(field);
 
         assertEquals(toMatch.equalsIgnoreCase(field), true);
     }

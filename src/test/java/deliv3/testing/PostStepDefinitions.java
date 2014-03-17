@@ -15,7 +15,4 @@ public class PostStepDefinitions extends SeleniumSteps {
 		super();
 	}
 	
-	public void tearDown() {
-		super.tearDown();
-	}
 }
