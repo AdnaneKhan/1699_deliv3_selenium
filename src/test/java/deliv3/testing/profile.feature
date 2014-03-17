@@ -1,7 +1,7 @@
 Feature: Profile Options
 
   Scenario: User Twitter Handle
-    Given that I am a user
+    Given that I am a registered user
     And my username is "Admin"
     And my password is "1699_pw"
     When I edit my profile

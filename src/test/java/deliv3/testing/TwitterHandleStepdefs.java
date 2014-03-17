@@ -28,7 +28,7 @@ public class TwitterHandleStepdefs extends SeleniumSteps {
 //	    Then my twitter handle should appear below posts that I have made
 //	    And I close my browser
 
-	public void tearDown() {
+	public void closeDown() {
 		super.tearDown();
 	}
 
@@ -69,9 +69,6 @@ public class TwitterHandleStepdefs extends SeleniumSteps {
 				"href");
 		String purportedLink = "http://twitter.com/" + this.twitterHandle;
 
-		// String[] explodeURL = linkText.split("/");
-		// int index = (explodeURL.length-1);
-		// String purportedName = explodeURL[index];
 		assertEquals(purportedLink, this.twitterHandle);
 	}
 
