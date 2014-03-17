@@ -42,7 +42,7 @@ Scenario: Change Back
     Given  I am a registered user
     And my username is "TestUser"
     And my password is "test_pw"
-    And try to log in
+    And I try to log in
     And my login is accepted
     When I want to change my password to "not_test_pw"
     When I am asked to confirm the new password I enter "not_tesst_pw"

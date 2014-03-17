@@ -9,15 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.sun.jna.platform.FileUtils;
-
 import java.io.File;
 import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import cucumber.api.java.en.*;
-import cucumber.api.junit.Cucumber;
 import static org.junit.Assert.*;
 
 /**
@@ -87,5 +81,4 @@ public class SeleniumSteps {
 		
 		org.apache.commons.io.FileUtils.copyFile(screen, new File(savePath));
 	}
-	
 }
