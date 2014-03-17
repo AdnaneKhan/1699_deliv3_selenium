@@ -11,28 +11,42 @@ import cucumber.api.java.en.*;
 import cucumber.api.junit.Cucumber;
 
 import org.junit.runner.RunWith;
+
 import static org.junit.Assert.*;
 
 public class AccountSecurityStepDefs extends SeleniumSteps {
-
+	// To be used for holding the new password
+	private static String temp_new_pw = null;
+	
 	@When("I want to change my password to \"(.*?)\"")
 	public void change_pw(String newPw) {
-
+		temp_new_pw = newPw;
 	}
 
 	@Then("^my old password of \"([^\"]*)\" does not work$")
 	public void my_old_password_of_does_not_work(String arg1) throws Throwable {
-		// Express the Regexp above with the code you wish you had
-		throw new PendingException();
+    	WebElement login = find(Locators.LOG_IN);
+    	login.click();
+
+    	WebElement uname = find(Locators.U_NAME);
+    	WebElement pass = find(Locators.P_WORD);
+    	
+    	uname.sendKeys(this.userName);
+    	pass.sendKeys(this.userPass);
+
+    	WebElement submit = find(Locators.SUBMIT);
+
+    	submit.click();
+    	
+    	assertFalse(super.present(Locators.LOGGED_IN));
 	}
 
 	@When("^I am asked to enter my old password I enter \"([^\"]*)\"$")
 	public void I_am_asked_to_enter_my_old_password_I_enter(String arg1)
 			throws Throwable {
-		// Express the Regexp above with the code you wish you had
-		throw new PendingException();
+		WebElement old_pw = super.find(Locators.OLD_PW);
+		old_pw.sendKeys(arg1);
 	}
-
 	@Then("^my password change is rejected$")
 	public void my_password_change_is_rejected() throws Throwable {
 		// Express the Regexp above with the code you wish you had
@@ -53,5 +67,13 @@ public class AccountSecurityStepDefs extends SeleniumSteps {
 		WebElement click_sub = super.find(Locators.SUBMIT_SETTINGS);
 		click_sub.click();
 	}
-
+	
+	@When("^I log out$")
+	public void I_log_out() throws Throwable {
+		WebElement logout = super.find(Locators.LOGGED_IN);
+		logout.click();
+		
+		// We check that the login prompt is present because we should have logged out
+		assertTrue(super.present(Locators.LOG_IN));
+	}
 }
