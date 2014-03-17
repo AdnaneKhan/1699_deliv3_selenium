@@ -35,6 +35,10 @@ public class TwitterHandleStepdefs extends SeleniumSteps {
 	public void submitChanges() throws InterruptedException{
 		WebElement submitButton = super.find(Locators.SAVE_PROFILE);
 		submitButton.click();
+	
+		super.handleAlerts();
+		
+		assertTrue(present(Locators.PROF_UPDATE));
 	}
 
 	@Then("my twitter handle should appear below posts that I have made")
