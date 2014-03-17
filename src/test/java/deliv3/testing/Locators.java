@@ -36,7 +36,19 @@ public enum Locators {
 	ADMIN_CP (14,"//*[@id=\"adminpanel\"]"),
 	INFO_UPDATE (15,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font"),
 	INFO_WRONG (16, "\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font"),
-	SUBMIT_CHANGES (17, "//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[39]/td/input[1]");
+	SUBMIT_CHANGES (17, "//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[39]/td/input[1]"),
+	SUBMIT_SETTINGS(18,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[38]/td/input[1]"),
+	OLD_PW(19, "//*[@id=\"current_password\"]"),
+	PW_CONF1 (20,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[7]/td[2]/input"),
+	PW_CONF2 (21,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[8]/td[2]/input"),
+	SIG_BLOCK(15,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[21]/td[2]/textarea"),
+	SHOW_SIG_YES(16,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[29]/td[2]/input[1]"),
+	SHOW_SIG_NO(17,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[29]/td[2]/input[2]"),
+	SAVE_PROFILE(18,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[38]/td/input[1]"),
+	PROFILE_FORUM_INDEX(19,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td[1]/span/a"),
+	TEST_FORUM(20,"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[2]/tbody/tr[3]/td[2]/span[1]/a"),
+	INTRO_THREAD(21,"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[3]/tbody/tr[2]/td[2]/span/a");
+	
 	private int id;
 	private String name;
 	
