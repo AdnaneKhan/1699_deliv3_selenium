@@ -24,7 +24,6 @@ public enum Locators {
 	SUBMIT ("//*[@id=\"loginform\"]/table[2]/tbody/tr[2]/td/table/tbody/tr[5]/td/input[2]"),
 	// This is where we have locally installed Selenium
 	WEB_HOME ("http://localhost:8080/jforum"),
-	// 
 	LOGGED_IN ("//*[@id=\"logout\"]"),
 	MY_PROFILE("//*[@id=\"myprofile\"]"),
 	CUR_PASSWORD("//*[@id=\"current_password\"]"),
@@ -53,7 +52,10 @@ public enum Locators {
 	PROF_UPDATE("//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font"),
 	TWITTER("/html/body/table/tbody/tr[2]/td/table[2]/tbody/tr[4]/td/table/tbody/tr[2]/td[2]/b/span/a"),
 	ADMIN_SIG_BLOCK("/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[3]/tbody/tr[4]/td/span"),
-	WRONG_PW("//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font");
+	WRONG_PW("//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font"),
+	LOCATION("/html/body/table/tbody/tr[2]/td/table[2]/tbody/tr[2]/td[2]/table/tbody/tr[4]/td[2]/b/span"),
+	LOC_INPUT("//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[17]/td[2]/input");
+	
 	private String name;
 	
 	

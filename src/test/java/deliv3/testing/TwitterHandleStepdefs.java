@@ -16,6 +16,7 @@ public class TwitterHandleStepdefs extends SeleniumSteps {
 	}
 
 	private String twitterHandle;
+	private String newLocation;
 	
 	@And ("I edit my profile")
 	public void I_edit_my_profile() throws InterruptedException{
@@ -41,13 +42,11 @@ public class TwitterHandleStepdefs extends SeleniumSteps {
 		assertTrue(present(Locators.PROF_UPDATE));
 	}
 
-	@Then("my twitter handle should appear below posts that I have made")
-	public void confirmHandle() throws InterruptedException {
+	@Then("my twitter handle should appear in my public profile")
+	public void confirmHandle() {
 		// Make sure handle matches the one we entered earlier
 
 		String purportedLink = "http://twitter.com/" + this.twitterHandle;
-		
-		assertTrue(present(Locators.PROF_UPDATE));
 		
 		WebElement userList = find(Locators.MEM_LIST);
 		userList.click();
@@ -57,6 +56,26 @@ public class TwitterHandleStepdefs extends SeleniumSteps {
 		String twitterLink = find(Locators.TWITTER).getAttribute("href");
 		
 		assertEquals(twitterLink.equals(purportedLink),true);
+	}
+	
+	@And("I want to change my location to \"(.*?)\"")
+	public void changeLocation(String arg1){
+		this.newLocation = arg1;
+		WebElement locBox = find(Locators.LOC_INPUT);
+		locBox.clear();
+		locBox.sendKeys(newLocation);
+	}
+	
+	@Then("my Location should appear in public profile")
+	public void asdf(){
+		WebElement userList = find(Locators.MEM_LIST);
+		userList.click();
+		
+		super.getCurrentDriver().findElement(By.linkText(super.userName)).click();
+		
+		WebElement profileLocation = find(Locators.LOCATION);
+		
+		assertTrue(newLocation.equalsIgnoreCase(profileLocation.getText()));
 	}
 
 }

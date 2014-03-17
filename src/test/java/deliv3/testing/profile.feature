@@ -8,8 +8,19 @@ Feature: Profile Options
     And I edit my profile
     And I want to change my Twitter account to "RyanUlan"
     And I submit my changes
-    Then my twitter handle should appear below posts that I have made
+    Then my twitter handle should appear in my public profile
     And I close my browser
+    
+  Scenario: User Location
+  	Given I am a registered user
+  	And my username is "TestUser"
+  	And my password is "test_pw"
+  	When I try to log in
+  	And I edit my profile
+  	And I want to change my location to "Pittsburgh"
+  	And I submit my changes
+  	Then my Location should appear in public profile
+  	And I close my browser
     
   Scenario: Add A Signature
    	Given I am a registered user
