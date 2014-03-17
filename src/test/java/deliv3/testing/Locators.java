@@ -45,9 +45,12 @@ public enum Locators {
 	PW_CONF2 (23,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[8]/td[2]/input"),
 	SUBMIT_CHANGES (24, "//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[39]/td/input[1]"),
 	INFO_WRONG (25, "\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font"),
-	SUBMIT_SETTINGS(18,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[38]/td/input[1]"),
-	OLD_PW(19, "//*[@id=\"current_password\"]"),
-	SIG_BLOCK(15,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[21]/td[2]/textarea");
+	SUBMIT_SETTINGS(26,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[38]/td/input[1]"),
+	OLD_PW(27, "//*[@id=\"current_password\"]"),
+	SIG_BLOCK(28,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[21]/td[2]/textarea"),
+	MEM_LIST(29,"//*[@id=\"userlist\"]"),
+	PROF_UPDATE(30,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font"),
+	TWITTER(31,"/html/body/table/tbody/tr[2]/td/table[2]/tbody/tr[4]/td/table/tbody/tr[2]/td[2]/b/span/a");
 
 	private int id;
 	private String name;

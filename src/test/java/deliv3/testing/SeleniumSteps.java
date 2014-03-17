@@ -87,5 +87,4 @@ public class SeleniumSteps {
 		
 		org.apache.commons.io.FileUtils.copyFile(screen, new File(savePath));
 	}
-	
 }
