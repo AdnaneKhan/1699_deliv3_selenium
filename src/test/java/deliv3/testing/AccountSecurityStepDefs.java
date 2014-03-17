@@ -58,7 +58,6 @@ public class AccountSecurityStepDefs extends SeleniumSteps {
 	public void I_am_asked_to_enter_my_old_password_I_enter(String old_password)
 			throws Throwable {
 		WebElement old_pw = super.find(Locators.OLD_PW);
-		System.err.println(old_password);
 		old_pw.sendKeys(old_password);
 	}
 	@Then("^my password change is rejected$")
@@ -73,7 +72,6 @@ public class AccountSecurityStepDefs extends SeleniumSteps {
 
 		WebElement pw_field = super.find(Locators.PW_CONF1);
 		WebElement pw_field2 = super.find(Locators.PW_CONF2);
-		System.err.println(arg1);
 		pw_field.sendKeys(arg1);
 		pw_field2.sendKeys(arg1);
 		WebElement click_sub = super.find(Locators.SUBMIT_SETTINGS);

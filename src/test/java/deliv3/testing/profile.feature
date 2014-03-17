@@ -13,18 +13,12 @@ Feature: Profile Options
     
   Scenario: Add A Signature
    	Given I am a registered user
-<<<<<<< HEAD
+
     And my username is "Admin"
     And my password is "1699_pw"
-    When I edit my profile
-    And I set my Signature to "I am the rules of the board"
-=======
-    And my username is "TestUser"
-    And my password is "test_pw"
     When I try to log in
     And I edit my profile
     And I set my Signature to "I am the ruler of the board"
->>>>>>> 75584b589d2a823b3fc17fc72d352b6e8323d629
     And then set my signature to attach
     And I submit my changes
     Then my signature should appear below posts that I have made
@@ -34,6 +28,7 @@ Scenario: Hide my signature
 	Given  I am a registered user
 	And my username is "Admin"
 	And my password is "1699_pw"
+	When I try to log in
 	When I edit my profile
 	And disable attaching of my signature
 	And I submit my changes
