@@ -6,6 +6,6 @@ import cucumber.api.PendingException;
 
 public class CloseDriverPendingException extends PendingException {
 	 CloseDriverPendingException(WebDriver web) {
-		 web.close();
+		 SeleniumSteps.tearDown();
 	 }
 }

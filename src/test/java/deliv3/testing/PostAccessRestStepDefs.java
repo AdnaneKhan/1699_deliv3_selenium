@@ -23,11 +23,6 @@ public class PostAccessRestStepDefs extends SeleniumSteps {
 	public PostAccessRestStepDefs() {
 		super();
 		adminDriver.get(Locators.WEB_HOME.getName());
-		
-		// Log the admin in, not part of test, but if it fails we abort
-		
-		
-		// Logged in? good
 	}
 	
 	@Given ("^that I am an admin")
@@ -40,7 +35,6 @@ public class PostAccessRestStepDefs extends SeleniumSteps {
 		super.find(Locators.SUBMIT,adminDriver).click();
 		
 		// Verify that we are logged in and that we are admin
-		
 	}
 	
 	@When ("^I make a thread named \"([^\"]*)\" viewable by admins only")
@@ -65,9 +59,4 @@ public class PostAccessRestStepDefs extends SeleniumSteps {
 		
 	}
 	
-	
-	public void tearDown() {
-		super.tearDown();
-		adminDriver.close();
-	}
 }

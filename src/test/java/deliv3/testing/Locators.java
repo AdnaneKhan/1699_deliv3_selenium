@@ -40,7 +40,10 @@ public enum Locators {
 	SAVE_PROFILE(18,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[38]/td/input[1]"),
 	PROFILE_FORUM_INDEX(19,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td[1]/span/a"),
 	TEST_FORUM(20,"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[2]/tbody/tr[3]/td[2]/span[1]/a"),
-	INTRO_THREAD(21,"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[3]/tbody/tr[2]/td[2]/span/a");
+	INTRO_THREAD(21,"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[3]/tbody/tr[2]/td[2]/span/a"),
+	INFO_UPDATE (22,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font"),
+	INFO_WRONG (23, "\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td/span/b/font"),
+	SUBMIT_CHANGES (24, "//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[39]/td/input[1]");
 	
 	private int id;
 	private String name;

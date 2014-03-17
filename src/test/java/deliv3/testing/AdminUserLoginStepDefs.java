@@ -14,9 +14,6 @@ import org.junit.runner.RunWith;
 
 public class AdminUserLoginStepDefs extends SeleniumSteps{
 	
-	private String userName = null;
-	private String userPass = null;
-	
 	@Given("^that I am a forum administrator$")
 	public void that_I_am_a_forum_administrator() throws Throwable {
 	   
