@@ -29,12 +29,12 @@ import org.junit.runner.RunWith;
  *
  */
 
-public class RegUserLoginStepDefinitions extends SeleniumSteps
+public class LoginStepDefs extends SeleniumSteps
 {
 	private String userName = null;
 	private String userPass = null;
-	
-	public RegUserLoginStepDefinitions() {
+
+	public LoginStepDefs() {
 		super();
 	}
 	
@@ -72,15 +72,21 @@ public class RegUserLoginStepDefinitions extends SeleniumSteps
     	submit.click();	
     }
     
-    @Then ("I am given access to the forum")
+    @Then ("my login is accepted")
     public void verifyLogin() {
     	String toMatch = "Logout ["+userName+"]";
     	
         WebElement loggedIn = find(Locators.LOGGED_IN);
         String field = loggedIn.getText();
+        
+//        System.err.println(userName);
+//        System.err.println(field);
 
         assertEquals(toMatch.equalsIgnoreCase(field), true);
-        	
-        this.tearDown();
+    }
+    
+    @Then ("I close my browser")
+    public void closeBrowser() {
+    	super.tearDown();
     }
 }

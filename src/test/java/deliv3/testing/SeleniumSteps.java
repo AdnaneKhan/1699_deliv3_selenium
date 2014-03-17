@@ -58,7 +58,7 @@ public class SeleniumSteps {
 			toFind = specific.findElement(By.xpath(handle.getName()));
 		} catch (NoSuchElementException e ) {
 			specific.quit();
-			fail();
+			fail("Element Not Located!!!");
 		}
 		
 		return toFind;

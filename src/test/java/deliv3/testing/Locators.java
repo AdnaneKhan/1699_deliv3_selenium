@@ -32,7 +32,8 @@ public enum Locators {
 	CONFIRM_PASS(10,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[8]/td[2]/input"),
 	TWITTER_INPUT(11,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[12]/td[2]/input"),
 	TWITTER_ANCHOR(12,"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[3]/tbody/tr[4]/td/table/tbody/tr/td/a[3]"),
-	INVALID_LOGIN_WARNING(13,"//*[@id=\"invalidlogin\"]/font");
+	INVALID_LOGIN_WARNING(13,"//*[@id=\"invalidlogin\"]/font"),
+	ADMIN_CP (14,"//*[@id=\"adminpanel\"]");
 	
 	private int id;
 	private String name;
