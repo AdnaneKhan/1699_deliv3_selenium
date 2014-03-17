@@ -26,7 +26,7 @@ public enum Locators {
 	WEB_HOME (5,"http://localhost:8080/jforum"),
 	// 
 	LOGGED_IN (6,"//*[@id=\"logout\"]"),
-	MY_PROFILE(7,"http://localhost:8080/jforum/user/edit/2.page"),
+	MY_PROFILE(7,"//*[@id=\"myprofile\"]"),
 	CUR_PASSWORD(8,"//*[@id=\"current_password\"]"),
 	NEW_PASS(9,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[7]/td[2]/input"),
 	CONFIRM_PASS(10,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[8]/td[2]/input"),

@@ -17,6 +17,7 @@ Feature: Login System
     Then I am notified that my login was invalid
     And I am not given access to the site
     And I close my browser
+    
 
   Scenario: Admin Login
     Given that I am a forum administrator
