@@ -30,10 +30,17 @@ public enum Locators {
 	CUR_PASSWORD(8,"//*[@id=\"current_password\"]"),
 	NEW_PASS(9,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[7]/td[2]/input"),
 	CONFIRM_PASS(10,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[8]/td[2]/input"),
-	TWITTER_INPUT(11,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[12]/td[2]/input"),
+	TWITTER_INPUT(11,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[11]/td[2]/input"),
 	TWITTER_ANCHOR(12,"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[3]/tbody/tr[4]/td/table/tbody/tr/td/a[3]"),
 	INVALID_LOGIN_WARNING(13,"//*[@id=\"invalidlogin\"]/font"),
-	ADMIN_CP (14,"//*[@id=\"adminpanel\"]");
+	ADMIN_CP (14,"//*[@id=\"adminpanel\"]"),
+	SIG_BLOCK(15,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[21]/td[2]/textarea"),
+	SHOW_SIG_YES(16,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[29]/td[2]/input[1]"),
+	SHOW_SIG_NO(17,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[29]/td[2]/input[2]"),
+	SAVE_PROFILE(18,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[38]/td/input[1]"),
+	PROFILE_FORUM_INDEX(19,"//*[@id=\"post\"]/table/tbody/tr/td/table/tbody/tr[1]/td[1]/span/a"),
+	TEST_FORUM(20,"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[2]/tbody/tr[3]/td[2]/span[1]/a"),
+	INTRO_THREAD(21,"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[3]/tbody/tr[2]/td[2]/span/a");
 	
 	private int id;
 	private String name;

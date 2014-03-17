@@ -1,11 +1,16 @@
 Feature: Posting
 
   Scenario: Post Thread
-    Given that I am a user
-    And I am trying to post a thread
+   	Given I am a registered user
+    And my username is "TestUser"
+    And my password is "test_pw"
+    And I am trying to post a new thread
     And I have permission to post a thread
-    When I fill in the thread body
-    And I post the thread
+    When I click "Test Forum"
+    And I click New Topic
+    And I write "Greetings" into the thread subject
+    And I enter "How's everyone doing today?" into the thread body
+    And I click Post Thread
     Then the thread appears for other users to view
 	And I close my browser
 	
